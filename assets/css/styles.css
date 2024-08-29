@@ -1,0 +1,268 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.full-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navbar styling */
+.navbar {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0B001A !important; /* Set background color to match home section */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    position: static; /* Ensure the navbar is always on top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure the navbar stays on top of the content */
+    padding: 0 50px; /* Padding for left and right */
+}
+
+/* Navbar logo styling */
+.navbar-logo {
+    height: 70px; /* Adjusted height for better responsiveness */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    padding: 0; /* Remove default padding */
+    margin-left: 0; /* Align logo to the left edge */
+    margin-right: 20px; /* Space between logo and navbar items */
+}
+
+/* Hover effect for navbar brand */
+.navbar-brand:hover {
+    color: #dfebf6 !important;
+}
+
+/* Navbar links (items) styling */
+.navbar-dark .navbar-nav .nav-link {
+    color: #FFFFFF !important;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    font-size: 1rem; /* Default size */
+    margin-right: 10px;
+}
+
+/* Hover effect for nav links */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #dfebf6 !important;  
+    transform: translateX(5px); /* Slight move to right on hover */
+}
+
+/* Add spacing between nav items */
+.navbar-nav .nav-item {
+    margin-right: 20px;
+}
+
+/* Remove margin for the last item to avoid extra space */
+.navbar-nav .nav-item:last-child {
+    margin-right: 0;
+}
+
+/* Align navbar items */
+.navbar-nav {
+    margin-left: auto; /* Adjust this margin if you need different positioning */
+    margin-right: -10px; /* Increase this value to push the nav items more to the right */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+/* Navbar toggler styling */
+.navbar-toggler {
+    margin-left: auto; /* Ensures the toggle button is on the right */
+}
+
+/* Navbar collapse styling */
+.navbar-collapse {
+    background-color: #0B001A; /* Match the navbar background */
+}
+
+/* Shift navbar items when a specific class is added */
+.navbar-shifted .navbar-nav {
+    margin-right: 100px; /* Example: Shift the navbar items */
+}
+
+/* Section styling */
+#about, #skills, #education, #work, #contact { 
+    margin-top: 70px;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+    justify-content: flex-start; /* Align content to the left */
+    padding-top: 70px; /* Adjust for navbar overlap */
+    overflow: hidden;
+}
+
+/* Home section styling */
+#home {
+    background: #0B001A;
+    color: #FFFFFF;
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Align items to the left */
+    min-height: 100vh;
+    padding: 0 80px; /* Padding for small screens */
+}
+
+/* Home content styling */
+#home .home-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    justify-content: center; /* Center items vertically */
+    text-align: left; /* Left align text */
+}
+
+/* Welcome text styling */
+.welcome {
+    margin-top: 80px; /* Adds space above the text */
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Greeting text styling */
+.greeting {
+    font-size: 3rem; /* Adjusted for better scaling */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Transition text styling */
+.transition-text {
+    font-size: 2rem;
+}
+
+/* Animated text styling */
+#animated-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFB6C1;
+}
+
+/* Tagline container styling */
+.tagline-container {
+    display: inline-block; /* Ensures the rectangle wraps around the text */
+    border: 2px solid #FFB6C1; /* Light pink border for the rectangle */
+    padding: 10px; /* Adds space around the text */
+    border-radius: 5px; /* Optional: rounds the corners of the rectangle */
+    margin-top: 20px; /* Adds space above the rectangle */
+    background-color: transparent; /* Ensures the background is transparent */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
+}
+
+/* Tagline text styling */
+.tagline {
+    font-size: 1rem; /* Responsive font size */
+    color: #FFFFFF; /* White text color for contrast */
+    text-align: left;
+}
+
+/* Social icon styling */
+.social-icon {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+/* Social icon hover effect */
+.social-icon:hover {
+    color: #FFB6C1; /* Light pink on hover */
+}
+
+/* Button styling */
+.btn-primary { 
+    font-size: 1rem;
+    color: #000000;
+    background-color: #FFB6C1; /* Light pink */
+    border: none;
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+    background-color: #ffffff; /* White */
+}
+
+/* About section styling */
+.about-section {
+    background: #f8f9fa;
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* About section image styling */
+.about-img img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+/* About section text styling */
+.about-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* About section heading styling */
+.about-text h2 {
+    font-size: 2.5rem; /* Responsive font size */
+    margin-bottom: 20px;
+    color: #ffffff; /* Dark maroon color for headings */
+}
+
+/* About section paragraph styling */
+.about-text p {
+    font-size: 1.2rem; /* Responsive font size */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Optional: Add a subtle fade-in animation when the section appears */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Fade-in effect for About section */
+#about {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Section-specific background colors */
+#skills {
+    background-color: #25094b; /* Deep maroon */
+    color: #ffffff;
+}
+
+#education {
+    background-color: #3d1078; /* Dark purple */
+    color: #ffffff;
+}
+
+#work {
+    background-color: #ffffff; /* White */
+    color: #000000; /* Black for contrast */
+}
+
+#contact {
+    background-color: #25094b; /* Deep maroon */
+    color: #ffffff; /* White text */
+}
+
+
