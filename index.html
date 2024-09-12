@@ -10,12 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </head>
 <body>
+    <!-- navbar starts -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
@@ -26,82 +33,193 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
                 </ul>
             </div>
         </nav>
-    </header>
-    
-    <section id="home" class="full-screen fade-in">
-        <div class="home-content">
-            <p class="welcome">Hi there,</p>
-            <p class="greeting">I'm <span class="name">Princess Roani Estrella</span></p>
-            <p class="transition-text">I specialize in <span id="animated-text"></span></p>
-            <p class="tagline-container"><span class="tagline">Transforming Ideas into Stunning Digital Experiences</span></p>
-            <div class="social-icons">
-                <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon" aria-label="Facebook Profile"><i class="bi bi-facebook"></i></a>
-                <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon" aria-label="Instagram Profile"><i class="bi bi-instagram"></i></a>
-                <a href="https://github.com/yourprofile" target="_blank" class="social-icon" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-icon" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
-                <a href="https://www.upwork.com" target="_blank" class="social-icon" aria-label="Upwork Profile"><i class="fas fa-briefcase"></i></a>
-            </div>
-            <a href="#contact" class="btn btn-primary mt-3">Get in Touch</a>
-        </div>
-    </section>
-    
-    <section id="about" class="about-section fade-in">
-        <div class="container about-container">
-            <div class="about-img">
-                <img src="assets/img/gradpic.jpg" alt="Profile Photo" class="img-fluid rounded-circle">
-            </div>
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>
-                    Hi! I'm Princess Roani Estrella, a passionate web developer and designer with a keen eye for detail. My journey into tech began with my love for creativity, which I initially expressed through digital art and graphic design.
-                </p>
-                <p>
-                    With a background in Computer Science, I’ve gained a strong foundation in coding. I specialize in front-end development, combining my technical skills with my design abilities to create intuitive and aesthetically pleasing websites.
-                </p>
-                <p>
-                    Moving forward, I’m eager to expand my skill set further, especially in the realm of full-stack development.
-                </p>
-            </div>
-        </div>
-    </section>
+    </header>    
+    <!-- navbar ends -->
 
-    <section id="skills" class="full-screen fade-in">
-        <div class="container">
-            <h1>Skills</h1>
-            <p>Details about my skills.</p>
+    <!-- home section starts -->
+    <section id="home" class="full-screen fade-in reveal-on-scroll">
+        <div class="home-content d-flex">
+            <div class="text-content">
+                <p class="welcome">Hi, my name is <span class="name">Princess Roani Estrella</span></p>
+                <p class="greeting">
+                    I create meaningful<br>
+                    solutions for clients.
+                </p>
+                <p class="tagline">A front-end developer with a passion for web design and two years of experience, dedicated to creating engaging designs and supporting business growth.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/princessroani.estrella.5/" target="_blank" class="social-icon" aria-label="Facebook Profile"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/estrellaprincessroani/" target="_blank" class="social-icon" aria-label="Instagram Profile"><i class="bi bi-instagram"></i></a>
+                    <a href="https://github.com/cessy29" target="_blank" class="social-icon" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+                    <a href="https://www.linkedin.com/in/princess-roani-estrella-4bb232288/" target="_blank" class="social-icon" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="image-content">
+                <div class="corner-box top-left"></div> 
+                <img src="assets/img/homepic.png" alt="Home Image" class="home-image">
+                <div class="corner-box bottom-right"></div>
+            </div>  
         </div>
     </section>
-    
-    <section id="education" class="full-screen fade-in">
-        <div class="container">
-            <h1>Education</h1>
-            <p>My educational background.</p>
-        </div>
-    </section>
-    
-    <section id="work" class="full-screen fade-in">
-        <div class="container">
-            <h1>Work</h1>
-            <p>Information about my work experience.</p>
-        </div>
-    </section>
-    
-    <section id="contact" class="full-screen fade-in">
-        <div class="container">
-            <h1>Contact</h1>
-            <p>How to get in touch with me.</p>
-        </div>
-    </section>
+        <!-- home section ends -->
 
+    <!-- about section starts -->
+    <section id="about" class="full-screen fade-in reveal-on-scroll">
+        <div class="container">
+            <h2 class="heading"><i class="bi bi-person-fill"></i> About <span>Me</span></h2>
+            <div class="content-wrapper">
+                <div class="left-text">
+                    <div class="tabs">
+                        <button class="tab-button" data-target="experience">Experience</button>
+                        <button class="tab-button" data-target="education">Education</button>
+                    </div>
+                </div>
+                <div class="tab-contents">
+                    <div id="education" class="tab-content reveal-on-scroll">
+                        <h4>Education</h4> 
+                        <!-- Education Entries -->
+                        <div class="education-entry">
+                            <p>
+                                <span class="year">2019 - 2023</span>
+                                <span class="school">Bachelor of Science in Computer Science</span>
+                            </p>
+                            <p class="degree">CITI Global College</p>
+                        </div>
+                        <div class="education-entry">
+                            <p>
+                                <span class="year">2017 - 2019</span>
+                                <span class="school">Senior High School | Information and Communication Technology</span>
+                            </p>
+                            <p class="shs">CITI Global College</p>
+                        </div>
+                    </div>                    
+                    <div id="experience" class="tab-content reveal-on-scroll">
+                        <h4>Experience</h4>
+                        <p class="year">2020-2022</p>
+                        <h6>Self-employer /<span>Front-end Developer </span></h6>
+                        <p>Developed and maintained responsive websites, focusing on user-friendly designs and functionality. Worked with HTML, CSS, JavaScript. Collaborated with clients to deliver custom web solutions and optimize performance for mobile and desktop platforms.</p>  
+                        <p class="year">2023-2024</p>
+                        <h6>CITI Global College / Instructor </span></h6>
+                        <p>I developed and delivered course materials in programming, web development, and database management. I created presentations, managed course documents, and streamlined grading. I mentored students, assessed their progress, and provided feedback to support their academic success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about section ends -->
+     
+<!-- skills section starts -->
+<section class="skills reveal-on-scroll" id="skills">
+
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+
+    <div class="container">
+          <div class="row" id="skillsContainer">
+      </div>
+</div>
+</section>
+<!-- skills section ends -->
+
+<!-- work section starts -->
+<section id="work" class="masonry-work-section">
+    <h2 class="heading"><i class="bi bi-briefcase-fill"></i> My <span>Works</span></h2>
+    <div class="masonry-grid">
+        <div class="masonry-item">
+            <img src="assets/img/project1.PNG" alt="Faculty Scheduling System" class="masonry-img">
+            <div class="masonry-overlay">
+                <h3>Faculty Scheduling System</h3>
+                <p>A system built for faculty scheduling, utilizing modern web technologies to optimize processes.</p>
+                <a href="https://github.com/cessy29/facultyscheduling.git" target="_blank">Learn more</a>
+            </div>
+        </div>
+  
+        <div class="masonry-item">
+            <img src="assets/img/puzzlegame.png" alt="Puzzle Game" class="masonry-img">
+            <div class="masonry-overlay">
+                <h3>Puzzle Game</h3>
+                <p>An engaging and interactive puzzle game built with Unity.</p>
+                <a href="https://www.example.com" target="_blank">Learn more</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- work section ends -->
+
+  
+  <!-- services section starts -->
+<section class="services reveal-on-scroll" id="services">
+    <h2 class="heading"><i class="fas fa-briefcase"></i> My <span>Services</span></h2>
+    <div class="services-container">
+      <div class="service-card">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Creating responsive and dynamic websites using HTML, CSS, JavaScript, and PHP.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Graphic Design</h3>
+        <p>Designing visually appealing graphics and layouts with Photoshop, Illustrator, and Canva.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-database"></i>
+        <h3>Database Management</h3>
+        <p>Managing and optimizing databases using MySQL and MS Access.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-code-branch"></i>
+        <h3>Version Control</h3>
+        <p>Managing source code with Git and GitHub for version control and collaboration.</p>
+      </div>
+    </div>
+  </section>
+  <!-- services section ends -->
+  
+
+
+
+  
+  
+<!-- footer section starts -->
+<section id="footer" class="footer reveal-on-scroll">
+    <h2 class="heading"><i class="bi bi-person-fill"></i> Contact <span>Me</span></h2>
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+            <img src="assets/img/footer-image.png" alt="Description of image" class="footer-image"> 
+        </div>
+  
+        <div class="footer-column">
+          <h3>Princess Portfolio</h3>
+          <p>Thank you for visiting my personal portfolio website. Connect with me on social media!</p>
+        <div class="footer-column">
+            <h3>Contact Info</h3>
+            <p><i class="fas fa-phone"></i> 09461096543</p>
+            <p><i class="fas fa-envelope"></i> eprincessroani@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Sta.Rosa, Laguna </p>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/princessroani.estrella.5/" target="_blank" class="social-icon" aria-label="Facebook Profile"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/estrellaprincessroani/" target="_blank" class="social-icon" aria-label="Instagram Profile"><i class="bi bi-instagram"></i></a>
+            <a href="https://github.com/cessy29" target="_blank" class="social-icon" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/princess-roani-estrella-4bb232288/" target="_blank" class="social-icon" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+        </div>
+          
+        </div>
+      </div>
+  
+      <div class="footer-bottom">
+        <p>Designed and Coded by <span>Princess Roani Estrella</span> | © 2024 All Rights Reserved</p>
+      </div>
+    </div>
+  </section>
+  <!-- footer section ends -->
     <script src="assets/js/script.js" defer></script>
 </body>
 </html>

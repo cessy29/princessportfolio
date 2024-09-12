@@ -1,9 +1,14 @@
-/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #0B001A;
+}
+
+section {
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .full-screen {
@@ -11,258 +16,1090 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 5%; 
 }
 
-/* Navbar styling */
+html::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+  background: rgb(235, 202, 245);
+}
+html::-webkit-scrollbar-thumb {
+  background: #713abe;
+}
+
+/* Navbar styles */
 .navbar {
-    font-family: 'Roboto', sans-serif;
-    background-color: #0B001A !important; /* Set background color to match home section */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 70px;
-    position: static; /* Ensure the navbar is always on top */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Ensure the navbar stays on top of the content */
-    padding: 0 50px; /* Padding for left and right */
+  background-color: #0B001A !important; /* Sets the background color of the navbar */
+  height: 70px; /* Defines the height of the navbar */
+  display: flex; /* Uses Flexbox for layout */
+  align-items: center; /* Vertically centers items within the navbar */
+  justify-content: flex-end; /* Aligns items to the right of the navbar */
+  padding-right: 100px;
+  z-index: 999;
 }
 
-/* Navbar logo styling */
 .navbar-logo {
-    height: 70px; /* Adjusted height for better responsiveness */
-    width: auto; /* Maintain aspect ratio */
+  height: 90px; /* Increase logo size for larger screens */
+  margin-left: 25px; /* Decrease margin-left */
+  animation: slideDownFromTop 1s ease-out; /* Apply animation to the navbar */
 }
 
-/* Navbar brand styling */
-.navbar-brand {
-    padding: 0; /* Remove default padding */
-    margin-left: 0; /* Align logo to the left edge */
-    margin-right: 20px; /* Space between logo and navbar items */
+.navbar-dark .navbar-nav .nav-link { 
+  color: #FFFFFF !important; 
+  transition: all 0.5s ease; 
+  margin-left: 20px; /* Adjusted margin for spacing */
+  padding: 0 30px; 
+  animation: slideDownFromTop 1s ease-out;
 }
 
-/* Hover effect for navbar brand */
-.navbar-brand:hover {
-    color: #dfebf6 !important;
-}
-
-/* Navbar links (items) styling */
-.navbar-dark .navbar-nav .nav-link {
-    color: #FFFFFF !important;
-    font-weight: bold;
-    transition: all 0.5s ease;
-    font-size: 1rem; /* Default size */
-    margin-right: 10px;
-}
-
-/* Hover effect for nav links */
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #dfebf6 !important;  
-    transform: translateX(5px); /* Slight move to right on hover */
+  color: #713abe !important; 
+  transform: translateX(5px);
 }
 
-/* Add spacing between nav items */
-.navbar-nav .nav-item {
-    margin-right: 20px;
-}
-
-/* Remove margin for the last item to avoid extra space */
-.navbar-nav .nav-item:last-child {
-    margin-right: 0;
-}
-
-/* Align navbar items */
-.navbar-nav {
-    margin-left: auto; /* Adjust this margin if you need different positioning */
-    margin-right: -10px; /* Increase this value to push the nav items more to the right */
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center items vertically */
-}
-
-/* Navbar toggler styling */
 .navbar-toggler {
-    margin-left: auto; /* Ensures the toggle button is on the right */
+  margin-left: auto; 
 }
 
-/* Navbar collapse styling */
 .navbar-collapse {
-    background-color: #0B001A; /* Match the navbar background */
+  background-color: #0B001A; /* Ensure background color is set */
 }
 
-/* Shift navbar items when a specific class is added */
-.navbar-shifted .navbar-nav {
-    margin-right: 100px; /* Example: Shift the navbar items */
+.navbar-collapse.show {
+  display: block; /* Ensure the collapse is shown */
 }
 
-/* Section styling */
-#about, #skills, #education, #work, #contact { 
-    margin-top: 70px;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start; /* Align content to the top */
-    justify-content: flex-start; /* Align content to the left */
-    padding-top: 70px; /* Adjust for navbar overlap */
-    overflow: hidden;
+/* Ensure text visibility */
+.navbar-nav .nav-link {
+  visibility: visible; /* Ensure links are visible */
 }
 
-/* Home section styling */
+/* Optional: To reset any unwanted styles */
+.collapse {
+  display: none; /* Default state */
+}
+
+.collapse.show {
+  display: block; /* Shown state when toggled */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767.98px) {
+  .home-content {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center the items */
+    text-align: center; /* Align text to the center for better readability */
+  }
+
+  .image-content {
+    order: 1; /* Ensure image comes first */
+    margin-bottom: 20px; /* Add space between image and text */
+    width: 100%; /* Set image width to 100% of its container */
+    max-width: 300px; /* Limit max size for mobile view */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .text-content {
+    order: 2; /* Ensure text content comes after the image */
+  }
+
+  .navbar {
+    padding-right: 0; /* Remove right padding */
+    justify-content: space-between; /* Space between logo and toggle button */
+  }
+
+  .navbar-logo {
+    margin-left: auto; /* Adjust margin for logo in mobile view */
+    margin-right: auto; /* Pushes the logo to the left */
+  }
+
+  .navbar-toggler {
+    margin-left: auto; /* Align toggle button to the right in mobile view */
+    margin-right: 30px; /* Add margin to the right */
+  }
+
+  .navbar-collapse {
+    width: 100%; /* Ensure collapse takes full width */
+    position: absolute; /* Positioning */
+    top: 70px; /* Position below the navbar */
+    left: 0; /* Align to the left */
+    background-color: #0B001A; /* Match background color */
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Stack nav items vertically */
+    text-align: right; /* Center text in mobile view */
+    padding-top: 20px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 15px 0; /* Adjust padding for mobile */
+  }
+}
+
+
 #home {
-    background: #0B001A;
+    position: relative;
+    background: #0B001A; /* Base background color */
     color: #FFFFFF;
-    text-align: left; /* Align text to the left */
+    text-align: left;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
-    align-items: flex-start; /* Align items to the left */
-    min-height: 100vh;
-    padding: 0 80px; /* Padding for small screens */
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 0;
+    z-index: 1;
 }
 
-/* Home content styling */
-#home .home-content {
-    max-width: 600px;
+.home-content {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    justify-content: center; /* Center items vertically */
-    text-align: left; /* Left align text */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-/* Welcome text styling */
+.text-content {
+    max-width: 50%;
+    margin-top: 30px;
+}
+
 .welcome {
-    margin-top: 80px; /* Adds space above the text */
-    font-size: 2rem;
+    color: #713abe;
+    font-size: 1.2rem;
     margin-bottom: 10px;
+    animation: slideUpFromBottom 2s ease-in-out; /* Apply animation once */
 }
 
-/* Greeting text styling */
 .greeting {
-    font-size: 3rem; /* Adjusted for better scaling */
+    font-size: 4rem;
     font-weight: bold;
     white-space: nowrap;
+    animation: slideUpFromBottom 2s ease-in-out; /* Apply animation once */
 }
 
-/* Transition text styling */
-.transition-text {
-    font-size: 2rem;
-}
-
-/* Animated text styling */
-#animated-text {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #FFB6C1;
-}
-
-/* Tagline container styling */
-.tagline-container {
-    display: inline-block; /* Ensures the rectangle wraps around the text */
-    border: 2px solid #FFB6C1; /* Light pink border for the rectangle */
-    padding: 10px; /* Adds space around the text */
-    border-radius: 5px; /* Optional: rounds the corners of the rectangle */
-    margin-top: 20px; /* Adds space above the rectangle */
-    background-color: transparent; /* Ensures the background is transparent */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
-}
-
-/* Tagline text styling */
 .tagline {
-    font-size: 1rem; /* Responsive font size */
-    color: #FFFFFF; /* White text color for contrast */
-    text-align: left;
-}
-
-/* Social icon styling */
-.social-icon {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-/* Social icon hover effect */
-.social-icon:hover {
-    color: #FFB6C1; /* Light pink on hover */
-}
-
-/* Button styling */
-.btn-primary { 
     font-size: 1rem;
-    color: #000000;
-    background-color: #FFB6C1; /* Light pink */
-    border: none;
+    color: #6e6e6e;
+    animation: slideUpFromBottom 2s ease-in-out; /* Apply animation once */
 }
 
-/* Button hover effect */
-.btn-primary:hover {
-    background-color: #ffffff; /* White */
+.social-icons {
+  display: flex;
+  align-items: center;
 }
 
-/* About section styling */
-.about-section {
-    background: #f8f9fa;
-    padding: 40px 0;
-    text-align: center;
+#home .social-icons a {
+  color: #713abe; /* Change color to white */
+  margin: 0 10px;
+  font-size: 20px;
+  text-decoration: none;
+  animation: slideUpFromBottom 2s ease-in-out; /* Apply animation once */
+
 }
 
-/* About section image styling */
-.about-img img {
+
+.image-content {
+    position: relative;
+    max-width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    margin-right: 5%; /* Increased margin-right to push image further to the right */
+    z-index: 1;
+}
+
+.home-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
     max-width: 100%;
-    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    animation: slideRightToLeft 2s ease-out; /* Apply animation to the image */
 }
 
-/* About section text styling */
-.about-text {
-    text-align: center;
-    margin-top: 20px;
+.corner-box {
+    position: absolute;
+    z-index: 0;
+    animation: slideRightToLeft 2s ease-out; /* Apply animation to the image */
 }
 
-/* About section heading styling */
-.about-text h2 {
-    font-size: 2.5rem; /* Responsive font size */
-    margin-bottom: 20px;
-    color: #ffffff; /* Dark maroon color for headings */
+.top-left {
+    width: 150px;
+    height: 150px;
+    background-color: #713abe;
+    top: -30px;
+    left: -30px;
 }
 
-/* About section paragraph styling */
-.about-text p {
-    font-size: 1.2rem; /* Responsive font size */
-    line-height: 1.6;
-    margin-bottom: 15px;
+.bottom-right {
+    width: 350px;
+    height: 350px;
+    background-color: #713abe;
+    bottom: -30px;
+    right: -30px;
 }
 
-/* Optional: Add a subtle fade-in animation when the section appears */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  #home {
+      padding: 20px; /* Adjust padding for smaller screens */
+      text-align: center; /* Center text */
+      position: relative; /* Ensure positioning context for corner boxes */
+      overflow: hidden; /* Hide overflow to ensure corner boxes are within view */
+  }
+
+  .home-content {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center align items horizontally */
+      justify-content: center; /* Center align items vertically */
+      width: 100%;
+  }
+
+  .image-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px; /* Space between image and text */
+      position: relative; /* Position relative for corner boxes */
+  }
+
+  .home-image {
+      width: 150%; /* Adjust width for mobile screens */
+      height: auto;
+      max-width: 300px; /* Set max width for the image */
+      object-fit: cover;
+      animation: slideUpFromBottom 2s ease-in-out; /* Apply animation */
+  }
+
+  .text-content {
+      max-width: 100%;
+      padding: 0 10px; /* Add padding to prevent text from touching edges */
+  }
+
+  .welcome {
+      font-size: 1.2rem; /* Adjust font size for mobile view */
+      margin-bottom: 10px;
+  }
+
+  .greeting {
+      font-size: 1.8rem; /* Adjust font size for mobile view */
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+
+  .tagline {
+      font-size: 1rem; /* Adjust font size for mobile view */
+  }
+
+  .social-icons {
+      display: flex;
+      justify-content: center; /* Center align social icons */
+      margin-top: 20px; /* Space between text and social icons */
+  }
+
+  #home .social-icons a {
+      color: #713abe;
+      margin: 0 8px; /* Adjust margin for smaller screens */
+      font-size: 18px; /* Adjust icon size for mobile view */
+  }
+
+  .corner-box {
+      position: absolute;
+      z-index: 0;
+      background-color: #713abe;
+      border-radius: 0;
+      width: 150px; /* Adjust size for mobile view */
+      height: 150px;
+  }
+
+  .top-left {
+      top: -20px; /* Adjust position for mobile */
+      left: -70px;
+  }
+
+  .bottom-right {
+      bottom: -20px; /* Adjust position for mobile */
+      right: -70px;
+  }
 }
 
-/* Fade-in effect for About section */
+
+ 
 #about {
-    animation: fadeIn 1s ease-in;
+  color: #FFFFFF;
 }
 
-/* Section-specific background colors */
-#skills {
-    background-color: #25094b; /* Deep maroon */
-    color: #ffffff;
+#about .heading {
+  padding-top: 40px;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+  margin-bottom: 0;
 }
 
-#education {
-    background-color: #3d1078; /* Dark purple */
-    color: #ffffff;
+#about h2 {
+  color: #fff;
+  text-align: center;
 }
 
-#work {
-    background-color: #ffffff; /* White */
-    color: #000000; /* Black for contrast */
+#about h2 span{
+  color: #713abe;
+  text-align: center;
+} 
+
+
+
+.small-icon {
+  font-size: 1em; /* Adjust the size as needed */
 }
 
-#contact {
-    background-color: #25094b; /* Deep maroon */
-    color: #ffffff; /* White text */
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between; /* Space out the tabs and content */
+  width: 100%;
+}
+
+.left-text {
+  width: 25%; /* Adjust width as needed */
+  margin-top: 40px; /* Reduced top margin */
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
 }
 
 
+
+.tab-button {
+  background: #0B001A; /* Button color */
+  border: none;
+  color: #ffffff; /* Text color */
+  padding: 10px 20px;
+  margin: 0 0 5px 0; /* Margin between buttons */
+  cursor: pointer;
+  font-size: 1.25rem;
+  width: 100%; /* Full width for buttons */
+  text-align: left; /* Align text to the left */
+  outline: none; /* Remove focus outline */
+  animation: slideRightToLeft 2s ease-out; /* Apply animation to the image */
+
+}
+
+/* Remove any default focus effects */
+.tab-button:focus, .tab-button:active {
+  outline: none; /* Remove outline */
+  box-shadow: none; /* Remove box-shadow */
+  border: none; /* Remove any border */
+}
+
+.tab-button.active {
+  border-bottom: 3px solid #713abe; /* This will add a bottom line */
+}
+
+.tab-contents {
+  width: 75%; /* Adjust width as needed */
+  padding-left: 200px; /* Reduced space between buttons and content */
+  min-height: 400px; /* Set a minimum height to keep the content section consistent */
+}
+
+.tab-content {
+  display: none;
+  text-align: left;
+  margin-top: 40px;
+  animation: slideRightToLeft 2s ease-out; /* Apply animation to the image */
+}
+
+/* Display the active tab content */
+.tab-content.active {
+  display: block;
+}
+
+#about h4 {
+  margin-bottom: 20px; /* Add space below the h4 */
+  color: #713abe;
+}
+
+#about p {
+  margin-top: 10px; /* Add space above each p element */
+  margin-bottom: 20px; /* Optional: add space below each p element */
+}
+
+#experience p {
+  color: gray; /* Set the text color to gray */
+}
+
+#experience .year{
+  color: #FFFFFF;
+}
+/* Space between year and school */
+.year {
+  display: inline-block;
+  margin-right: 50px; /* Adjust to increase/decrease space between year and school */
+  vertical-align: top; /* Align year to the top */
+}
+
+.school {
+  display: inline-block;
+  vertical-align: top; /* Align school to the top */
+}
+
+/* Align shs and degree directly beneath the school */
+.shs, .degree {
+  margin-left: calc(15px + 8em); /* Offset to align with the school name */
+  margin-top: 0; /* Remove extra margin at the top */
+  color: #6e6e6e;
+}
+
+/* Optional: Ensure entries are spaced out properly */
+.education-entry {
+  margin-bottom: 40px; /* Space between education entries */
+}
+
+/* Mobile Media Query */
+@media (max-width: 768px) {
+
+  /* Adjust container padding and layout for smaller screens */
+  .container {
+    padding: 0 15px; /* Add padding to prevent content from touching edges */
+  }
+
+  #about .heading {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  .content-wrapper {
+    flex-direction: column; /* Stack the tabs and content vertically */
+  }
+
+  .left-text {
+    width: 100%; /* Make the tabs take full width */
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  .tabs {
+    flex-direction: row; /* Change tabs to row for better alignment */
+    justify-content: center; /* Center the tab buttons */
+  }
+
+  .tab-button {
+    font-size: 1rem; /* Smaller font size for buttons */
+    padding: 8px 12px; /* Reduce padding */
+    text-align: center; /* Center align text in buttons */
+    width: auto; /* Adjust width for better fit */
+    margin: 5px; /* Add margin around buttons */
+  }
+
+  .tab-contents {
+    width: 100%; /* Make tab content take full width */
+    padding-left: 0; /* Remove left padding */
+  }
+
+  .tab-content {
+    margin-top: 20px; /* Adjust margin for mobile view */
+  }
+
+  /* Adjust text size for better readability */
+  #about h4 {
+    font-size: 1.25rem; /* Smaller h4 size */
+  }
+
+  #about p {
+    font-size: 1rem; /* Smaller paragraph size */
+    margin-bottom: 10px; /* Adjust spacing */
+  }
+
+  .year, .school {
+    display: block; /* Stack year and school on top of each other */
+    margin-right: 0;
+    margin-top: 10px; /* Add space between year and school */
+  }
+
+  .shs, .degree {
+    margin-left: 0; /* Reset margin */
+  }
+
+  .education-entry {
+    margin-bottom: 20px; /* Adjust spacing between entries */
+  }
+
+}
+
+/* about section ends */
+
+
+/* skills section starts */
+.skills {
+  padding-bottom: 100px;
+}
+
+#skills .heading {
+  padding-top: 50px;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+  margin-bottom: 0;
+}
+.skills h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.skills .heading span {
+  color: #713abe;
+}
+
+.skills .container {
+  background: #713abe;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem 3rem; /* Reduced padding */
+  width: 100%; /* Reduced width */
+  margin: auto;
+  margin-top: 2.5rem; /* Reduced margin-top */
+}
+
+.skills .container .row {
+  display: grid;
+  grid-template-columns: repeat(5 , 1fr); /* Reduced columns */
+  flex-wrap: wrap;
+  gap: 1rem; /* Reduced gap */
+}
+
+.skills .container .bar {
+  margin-bottom: 10px; /* Reduced margin-bottom */
+  padding: 8px; /* Reduced padding */
+  border-radius: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+  background: #ffffff;
+  transition: 0.2s;
+}
+
+.skills .container .bar:hover {
+  box-shadow: 0 6px 8px #9A6FCF !important; /* Reduced shadow */
+  background-color: #9A6FCF !important;
+}
+
+.skills .container .bar .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem; /* Reduced gap */
+  margin-top: 0.8rem; /* Reduced margin-top */
+}
+
+.skills .container .bar .info i {
+  font-size: 3rem; /* Reduced font-size */
+}
+
+.skills .container .bar .info span {
+  font-size: 1rem; /* Reduced font-size */
+  font-weight: 500;
+  font-family: "Poppins";
+  margin-left: 0.5rem; 
+  color: #000000;
+}
+
+/* Media Query for Tablets and Smaller Devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+
+  /* Container adjustments for better fit on smaller screens */
+  .skills .container {
+    padding: 1rem; /* Adjusted padding for a more compact look */
+    margin: 0 auto; /* Center the container */
+    width: 95%; /* Slightly wider to fill more of the screen */
+    background: #713abe; /* Maintain background color */
+  }
+
+  /* Adjust grid layout for tablets and smaller screens */
+  .skills .container .row {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for better fit */
+    gap: 0.8rem; /* Reduce gap between items for a tighter layout */
+    margin: 0; /* Remove extra margin */
+  }
+
+  /* Skill bars: Adjust spacing and styling */
+  .skills .container .bar {
+    padding: 12px; /* Adjust padding for mobile usability */
+    margin-bottom: 1rem; /* Increase space between bars for clarity */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adjust shadow for a lighter effect */
+  }
+
+  /* Adjust icon and text size */
+  .skills .container .bar .info i {
+    font-size: 2rem; /* Smaller icon size for better fit */
+  }
+
+  .skills .container .bar .info span {
+    font-size: 0.9rem; /* Adjust text size for readability */
+  }
+
+  /* Adjust layout of text and icon */
+  .skills .container .bar .info {
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center-align the content */
+    gap: 0.5rem; /* Reduced gap between icon and text */
+  }
+}
+
+/* skills media queries ends */
+/* skills section ends */
+
+/* work section starts */
+#work .heading {
+  padding-top: 60px;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.heading i {
+  margin-right: 0.5rem;
+}
+
+.heading span {
+  color: #4e00bb;
+}
+
+.masonry-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.masonry-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Retain original border-radius for consistency */
+  box-shadow: 0 4px 8px var(--shadow1), 0 2px 4px var(--shadow2);
+  transition: transform 0.3s ease-in-out;
+  width: 500px; /* Slightly reduced width */
+  height: 400px; /* Slightly reduced height */
+
+}
+
+.masonry-item:hover {
+  transform: scale(1.05);
+}
+
+.masonry-img {
+  width: 100%;
+  height: 100%; /* Ensure image covers the item */
+  object-fit: cover; /* Maintain aspect ratio of images */
+  border-radius: 10px; /* Match border-radius */
+}
+
+.masonry-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem; /* Keep padding consistent */
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--neu-color);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px; /* Match border-radius */
+}
+
+.masonry-item:hover .masonry-overlay {
+  opacity: 1;
+}
+
+.masonry-overlay h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem; /* Retain original font size */
+  color: #FFFFFF;
+}
+
+.masonry-overlay p {
+  margin: 0;
+  font-size: 1rem; /* Retain original font size */
+  color: #FFFFFF;
+
+}
+
+/* Media Query for Mobile Devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+
+  /* Adjust heading styling for smaller screens */
+  #work .heading {
+    font-size: 1.5rem; /* Reduced font size for better fit */
+    padding-top: 40px; /* Adjusted padding */
+    margin-bottom: 20px; /* Reduced margin-bottom */
+  }
+
+  .heading i {
+    margin-right: 0.3rem; /* Smaller margin for the icon */
+  }
+
+  .heading span {
+    color: #4e00bb; /* Maintain color */
+  }
+
+  /* Adjust masonry grid layout for smaller screens */
+  .masonry-grid {
+    flex-direction: column; /* Stack items vertically */
+    gap: 1.5rem; /* Reduced gap between items */
+  }
+
+  /* Adjust masonry item styling for smaller screens */
+  .masonry-item {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Auto height to maintain aspect ratio */
+    max-width: 400px; /* Limit maximum width */
+    margin: 0 auto; /* Center items */
+  }
+
+  .masonry-img {
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Adjust masonry overlay for smaller screens */
+  .masonry-overlay {
+    padding: 0.5rem; /* Reduced padding */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .masonry-overlay h3 {
+    font-size: 1rem; /* Reduced font size */
+  }
+
+  .masonry-overlay p {
+    font-size: 0.9rem; /* Adjusted font size */
+  }
+}
+/* work section end */
+
+
+/* services section starts */
+.services {
+  padding: 60px 20px;
+  background-color: #0B001A;
+  text-align: center;
+}
+
+#services .heading {
+  padding-top: 50px;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.services h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+
+.services h2 span {
+  color: #713abe;
+}
+
+.services-container {
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns for larger screens */
+  gap: 2rem; /* Adjusted gap */
+  max-width: 1100px;
+  margin: auto;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Service Card Styles */
+.service-card {
+  background: #713abe;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-card i {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    gap: 1.5rem; /* Adjusted gap */
+    justify-content: flex-end; /* Align items to the right */
+    margin-right: 10px; /* Adjust margin-right to push container more to the right */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .services-container {
+    grid-template-columns: 1fr; /* Single column for small screens */
+    gap: 1rem; /* Adjusted gap */
+    justify-content: flex-end; /* Align items to the right */
+    margin-right: 20px; /* Adjust margin-right to push container more to the right */
+  }
+
+  .service-card {
+    padding: 1rem; /* Adjusted padding for small screens */
+  }
+
+  .service-card i {
+    font-size: 2rem; /* Adjusted font size */
+  }
+
+  .service-card h3 {
+    font-size: 1.1rem; /* Adjusted font size */
+  }
+
+  .service-card p {
+    font-size: 0.8rem; /* Adjusted font size */
+  }
+}
+/* services section ends */
+
+
+
+
+/* footer section starts */
+.footer {
+  background: #0B001A;
+  color: #fff;
+  padding: 2rem 0;
+  font-family: "Poppins", sans-serif;
+  padding-top: 25px;
+  padding-bottom: 0;
+}
+
+.footer h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.footer h2 span {
+  color: #713abe;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 0rem;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1 1 45%; /* Adjust column size */
+  margin-bottom: 1.5rem;
+}
+
+.footer-image{
+  padding-left: 80px;
+  width: 450px;
+  height: 350px;
+}
+
+.footer-column h3 {
+  color: #713abe;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column p {
+  color: #C5C6C7;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.footer-column i {
+  color: #713abe;
+  margin-right: 0.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #C5C6C7;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #FFB6C1;
+  transform: scale(1.1); /* Hover effect */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2.5rem;
+  padding-bottom: 10px;
+}
+
+.footer-bottom p {
+  color: #C5C6C7;
+}
+
+.footer-bottom span {
+  color: #713abe;
+}
+
+/* footer section starts */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .footer h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    margin-bottom: 30px; /* Reduce margin */
+  }
+
+  .footer-columns {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .footer-column {
+    flex: 1 1 100%; /* Full width for each column */
+    margin-bottom: 2rem; /* Increase bottom margin */
+    text-align: center; /* Center text for better alignment */
+  }
+
+  .footer-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    padding-left: 0; /* Remove left padding */
+    margin-bottom: 2rem; /* Add bottom margin for spacing */
+  }
+
+  .social-icons {
+    justify-content: center; /* Center align social icons */
+  }
+
+  .footer-bottom {
+    padding-top: 1rem; /* Adjust padding */
+    padding-bottom: 1rem; /* Adjust padding */
+    margin-bottom: 0px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.9rem; /* Adjust font size */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    padding: 1.5rem 0.5rem; /* Further adjust padding */
+  }
+
+  .footer h2 {
+    font-size: 1.2rem; /* Smaller font size */
+    margin-bottom: 20px; /* Reduce margin */
+  }
+
+  .footer-columns {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .footer-column {
+    flex: 1 1 100%; /* Full width for each column */
+    margin-bottom: 1.5rem; /* Adjust margin */
+  }
+
+  .footer-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    padding-left: 0; /* Remove left padding */
+    margin-bottom: 1.5rem; /* Adjust bottom margin */
+  }
+
+  .social-icons {
+    justify-content: center; /* Center align social icons */
+  }
+
+  .footer-bottom {
+    padding-top: 1rem; /* Adjust padding */
+    padding-bottom: 0.5rem; /* Adjust padding */
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem; /* Smaller font size */
+  }
+}
+/* footer section ends */
+
+
+
+/* footer section ends */
+
+
+
+@keyframes slideDownFromTop {
+  0% {
+      transform: translateY(-100%);
+      opacity: 0;
+      background-color: #0B001A; /* Ensure this matches your navbar background color */
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+      background-color: #0B001A; /* Ensure this matches your navbar background color */
+  }
+}
+
+@keyframes slideUpFromBottom {
+  0% {
+      transform: translateY(-100%); /* Start above the viewport */
+      opacity: 0; /* Start as invisible */
+  }
+  100% {
+      transform: translateY(0); /* End at the final position */
+      opacity: 1; /* Fully visible */
+  }
+}
+
+@keyframes slideRightToLeft {
+  0% {
+      transform: translateX(100%); /* Start from the right side of the viewport */
+      opacity: 0; /* Start as invisible */
+  }
+  100% {
+      transform: translateX(0); /* End at the final position */
+      opacity: 1; /* Fully visible */
+  }
+}
